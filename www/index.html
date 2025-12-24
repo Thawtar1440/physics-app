@@ -1,95 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <title>Physics App</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <title>Physics Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
       font-family: Arial, sans-serif;
       background: #0f172a;
-      color: #e5e7eb;
+      color: #fff;
       padding: 20px;
     }
-    h1 {
-      text-align: center;
-      color: #38bdf8;
-    }
+    h1 { text-align: center; }
     .card {
-      background: #020617;
+      background: #1e293b;
       padding: 15px;
-      border-radius: 12px;
       margin-bottom: 15px;
-    }
-    input, button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 8px;
-      border-radius: 8px;
-      border: none;
-      font-size: 16px;
+      border-radius: 10px;
     }
     input {
-      background: #1e293b;
-      color: white;
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      border-radius: 5px;
+      border: none;
     }
     button {
+      width: 100%;
+      padding: 10px;
       background: #38bdf8;
-      color: black;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
       font-weight: bold;
     }
     .result {
-      margin-top: 10px;
+      margin-top: 8px;
       font-size: 18px;
       color: #22c55e;
     }
   </style>
 </head>
-<body>
 
-<h1>⚛️ Physics Calculator</h1>
+<body>
+<h1>⚛️ Physics Formula App</h1>
 
 <div class="card">
   <h3>Force (F = m × a)</h3>
-  <input id="mass" type="number" placeholder="Mass (kg)">
-  <input id="acc" type="number" placeholder="Acceleration (m/s²)">
-  <button onclick="calcForce()">Calculate Force</button>
-  <div class="result" id="forceResult"></div>
+  <input id="m" placeholder="Mass (kg)">
+  <input id="a" placeholder="Acceleration (m/s²)">
+  <button onclick="force()">Calculate</button>
+  <div class="result" id="force"></div>
 </div>
 
 <div class="card">
-  <h3>Speed (v = d / t)</h3>
-  <input id="distance" type="number" placeholder="Distance (m)">
-  <input id="time" type="number" placeholder="Time (s)">
-  <button onclick="calcSpeed()">Calculate Speed</button>
-  <div class="result" id="speedResult"></div>
+  <h3>Velocity (v = s / t)</h3>
+  <input id="s" placeholder="Distance (m)">
+  <input id="t" placeholder="Time (s)">
+  <button onclick="velocity()">Calculate</button>
+  <div class="result" id="velocity"></div>
+</div>
+
+<div class="card">
+  <h3>Kinetic Energy (½ m v²)</h3>
+  <input id="km" placeholder="Mass (kg)">
+  <input id="kv" placeholder="Velocity (m/s)">
+  <button onclick="ke()">Calculate</button>
+  <div class="result" id="ke"></div>
+</div>
+
+<div class="card">
+  <h3>Potential Energy (m g h)</h3>
+  <input id="pm" placeholder="Mass (kg)">
+  <input id="h" placeholder="Height (m)">
+  <button onclick="pe()">Calculate</button>
+  <div class="result" id="pe"></div>
+</div>
+
+<div class="card">
+  <h3>Ohm's Law (V = I × R)</h3>
+  <input id="i" placeholder="Current (A)">
+  <input id="r" placeholder="Resistance (Ω)">
+  <button onclick="ohm()">Calculate</button>
+  <div class="result" id="ohm"></div>
+</div>
+
+<div class="card">
+  <h3>Einstein (E = m c²)</h3>
+  <input id="em" placeholder="Mass (kg)">
+  <button onclick="einstein()">Calculate</button>
+  <div class="result" id="einstein"></div>
 </div>
 
 <script>
-  function calcForce() {
-    const m = parseFloat(document.getElementById("mass").value);
-    const a = parseFloat(document.getElementById("acc").value);
-    if (isNaN(m) || isNaN(a)) {
-      document.getElementById("forceResult").innerText = "❌ Enter valid values";
-      return;
-    }
-    const f = m * a;
-    document.getElementById("forceResult").innerText =
-      "Force = " + f.toFixed(2) + " N";
-  }
+function force(){
+  let m = +document.getElementById("m").value;
+  let a = +document.getElementById("a").value;
+  document.getElementById("force").innerText = "F = " + (m*a) + " N";
+}
 
-  function calcSpeed() {
-    const d = parseFloat(document.getElementById("distance").value);
-    const t = parseFloat(document.getElementById("time").value);
-    if (isNaN(d) || isNaN(t) || t === 0) {
-      document.getElementById("speedResult").innerText = "❌ Enter valid values";
-      return;
-    }
-    const v = d / t;
-    document.getElementById("speedResult").innerText =
-      "Speed = " + v.toFixed(2) + " m/s";
-  }
+function velocity(){
+  let s = +document.getElementById("s").value;
+  let t = +document.getElementById("t").value;
+  document.getElementById("velocity").innerText = "v = " + (s/t) + " m/s";
+}
+
+function ke(){
+  let m = +document.getElementById("km").value;
+  let v = +document.getElementById("kv").value;
+  document.getElementById("ke").innerText = "KE = " + (0.5*m*v*v) + " J";
+}
+
+function pe(){
+  let m = +document.getElementById("pm").value;
+  let h = +document.getElementById("h").value;
+  document.getElementById("pe").innerText = "PE = " + (m*9.8*h) + " J";
+}
+
+function ohm(){
+  let i = +document.getElementById("i").value;
+  let r = +document.getElementById("r").value;
+  document.getElementById("ohm").innerText = "V = " + (i*r) + " V";
+}
+
+function einstein(){
+  let m = +document.getElementById("em").value;
+  const c = 300000000;
+  document.getElementById("einstein").innerText = "E = " + (m*c*c) + " J";
+}
 </script>
-
 </body>
 </html>
