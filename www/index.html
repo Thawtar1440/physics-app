@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Physics App</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  <style>
+    body { margin:0; }
+    canvas { display:block; }
+  </style>
+</head>
+<body>
+<script>
+  const Engine = Matter.Engine;
+  const Render = Matter.Render;
+  const World = Matter.World;
+  const Bodies = Matter.Bodies;
+
+  const engine = Engine.create();
+
+  const render = Render.create({
+    element: document.body,
+    engine: engine,
+    options: {
+      width: 360,
+      height: 640,
+      wireframes: false
+    }
+  });
+
+  const box = Bodies.rectangle(180, 100, 60, 60);
+  const ground = Bodies.rectangle(180, 620, 360, 40, { isStatic: true });
+
+  World.add(engine.world, [box, ground]);
+
+  Engine.run(engine);
+  Render.run(render);
+</script>
+</body>
+</html>
