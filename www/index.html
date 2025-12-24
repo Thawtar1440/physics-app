@@ -1,40 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Physics App</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    body { margin:0; }
-    canvas { display:block; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #38bdf8;
+    }
+    .card {
+      background: #020617;
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
+    input {
+      background: #1e293b;
+      color: white;
+    }
+    button {
+      background: #38bdf8;
+      color: black;
+      font-weight: bold;
+    }
+    .result {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #22c55e;
+    }
   </style>
 </head>
 <body>
+
+<h1>⚛️ Physics Calculator</h1>
+
+<div class="card">
+  <h3>Force (F = m × a)</h3>
+  <input id="mass" type="number" placeholder="Mass (kg)">
+  <input id="acc" type="number" placeholder="Acceleration (m/s²)">
+  <button onclick="calcForce()">Calculate Force</button>
+  <div class="result" id="forceResult"></div>
+</div>
+
+<div class="card">
+  <h3>Speed (v = d / t)</h3>
+  <input id="distance" type="number" placeholder="Distance (m)">
+  <input id="time" type="number" placeholder="Time (s)">
+  <button onclick="calcSpeed()">Calculate Speed</button>
+  <div class="result" id="speedResult"></div>
+</div>
+
 <script>
-  const Engine = Matter.Engine;
-  const Render = Matter.Render;
-  const World = Matter.World;
-  const Bodies = Matter.Bodies;
-
-  const engine = Engine.create();
-
-  const render = Render.create({
-    element: document.body,
-    engine: engine,
-    options: {
-      width: 360,
-      height: 640,
-      wireframes: false
+  function calcForce() {
+    const m = parseFloat(document.getElementById("mass").value);
+    const a = parseFloat(document.getElementById("acc").value);
+    if (isNaN(m) || isNaN(a)) {
+      document.getElementById("forceResult").innerText = "❌ Enter valid values";
+      return;
     }
-  });
+    const f = m * a;
+    document.getElementById("forceResult").innerText =
+      "Force = " + f.toFixed(2) + " N";
+  }
 
-  const box = Bodies.rectangle(180, 100, 60, 60);
-  const ground = Bodies.rectangle(180, 620, 360, 40, { isStatic: true });
-
-  World.add(engine.world, [box, ground]);
-
-  Engine.run(engine);
-  Render.run(render);
+  function calcSpeed() {
+    const d = parseFloat(document.getElementById("distance").value);
+    const t = parseFloat(document.getElementById("time").value);
+    if (isNaN(d) || isNaN(t) || t === 0) {
+      document.getElementById("speedResult").innerText = "❌ Enter valid values";
+      return;
+    }
+    const v = d / t;
+    document.getElementById("speedResult").innerText =
+      "Speed = " + v.toFixed(2) + " m/s";
+  }
 </script>
+
 </body>
 </html>
