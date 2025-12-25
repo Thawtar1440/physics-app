@@ -2,300 +2,1380 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Physics Full Detailed App</title>
+<title>Physics – Motion (Complete Chapter)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body{margin:0;font-family:Arial;background:#020617;color:#e5e7eb}
 header{padding:16px;text-align:center;font-size:22px;color:#38bdf8}
 section{padding:12px}
-details{background:#020617;border-radius:12px;margin-bottom:16px;padding:12px}
+details{background:#020617;border:1px solid #1e293b;border-radius:12px;margin-bottom:16px;padding:12px}
 summary{font-size:18px;color:#38bdf8;font-weight:bold;cursor:pointer}
-h4{margin:10px 0;color:#7dd3fc}
+h4{color:#7dd3fc;margin:10px 0}
 .formula{border-left:4px solid #38bdf8;padding:6px;margin:6px 0}
-.unit{color:#a5f3fc;font-size:13px}
-.example{background:#020617;border:1px solid #1e293b;padding:8px;border-radius:6px}
+.unit{font-size:13px;color:#a5f3fc}
+.example{border:1px solid #1e293b;padding:8px;border-radius:6px}
 input,button{width:100%;padding:8px;margin:4px 0;border-radius:6px;border:none}
 button{background:#38bdf8;color:black;font-weight:bold}
-.result{color:#22d3ee;margin-top:5px}
-p{font-size:14px;line-height:1.7}
+.result{color:#22d3ee}
+canvas{width:100%;max-width:400px;border:1px solid #1e293b;border-radius:8px;margin-top:6px}
+p{font-size:14px;line-height:1.8}
 </style>
 </head>
 
 <body>
-<header>📘 PHYSICS – COMPLETE DETAILED THEORY + FORMULA + CALCULATION</header>
+<header>📘 PHYSICS – CHAPTER 1: MOTION (FULL)</header>
+
 <section>
 
-<!-- ================= CHAPTER 1 ================= -->
+<!-- ================= BASIC CONCEPT ================= -->
 <details open>
-<summary>Chapter 1 – Motion</summary>
+<summary>1. Motion – Basic Concept</summary>
 
-<h4>1. Definition</h4>
+<h4>Definition</h4>
 <p>
-Motion ဆိုသည်မှာ အရာဝတ္ထုတစ်ခု၏ နေရာ (position) သည် အချိန်အလိုက် ပြောင်းလဲခြင်းဖြစ်သည်။
-Observer တစ်ယောက်အပေါ်မူတည်ပြီး motion သို့မဟုတ် rest ဖြစ်နိုင်သည်။
+Motion ဆိုသည်မှာ အရာဝတ္ထုတစ်ခု၏ position သည်
+reference point တစ်ခုနှင့် နှိုင်းယှဉ်လျှင်
+အချိန်အလိုက် ပြောင်းလဲနေခြင်းဖြစ်သည်။
 </p>
 
-<h4>2. Types of Motion</h4>
+<h4>Rest & Motion</h4>
 <p>
-(1) Translational Motion – တစ်နေရာမှ တစ်နေရာသို့ ရွေ့လျားခြင်း<br>
-(2) Rotational Motion – Axis တစ်ခုအပေါ် လှည့်လည်ခြင်း<br>
-(3) Oscillatory Motion – အပြန်အလှန် လှုပ်ရှားခြင်း
+Object တစ်ခုသည် observer တစ်ယောက်အတွက် motion ဖြစ်နိုင်သလို
+အခြား observer အတွက် rest ဖြစ်နိုင်သည်။
 </p>
 
-<h4>3. Speed & Velocity</h4>
+<h4>Types of Motion</h4>
 <p>
-Speed သည် scalar quantity ဖြစ်ပြီး direction မပါဝင်ပါ။
-Velocity သည် vector quantity ဖြစ်ပြီး magnitude နှင့် direction နှစ်ခုလုံး ပါဝင်သည်။
+• Translational Motion<br>
+• Rotational Motion<br>
+• Oscillatory Motion
+</p>
+</details>
+
+<!-- ================= DISTANCE & DISPLACEMENT ================= -->
+<details>
+<summary>2. Distance & Displacement</summary>
+
+<h4>Distance</h4>
+<p>
+Distance သည် object သွားခဲ့သည့် လမ်းကြောင်းအရှည်စုစုပေါင်းဖြစ်ပြီး
+scalar quantity ဖြစ်သည်။
 </p>
 
-<h4>4. Acceleration</h4>
+<h4>Displacement</h4>
 <p>
-Velocity ပြောင်းလဲမှု၏ အမြန်နှုန်းကို acceleration ဟုခေါ်သည်။
-Uniform acceleration နှင့် non-uniform acceleration ရှိသည်။
+Initial position မှ final position သို့
+shortest distance ကို displacement ဟုခေါ်ပြီး
+vector quantity ဖြစ်သည်။
 </p>
 
-<h4>5. Equations of Motion</h4>
-<div class="formula">v = u + at</div>
-<div class="formula">s = ut + ½at²</div>
-<div class="formula">v² = u² + 2as</div>
+<div class="formula">Distance ≥ |Displacement|</div>
 
 <h4>Units</h4>
-<p class="unit">Distance (m), Time (s), Velocity (m/s), Acceleration (m/s²)</p>
+<p class="unit">meter (m)</p>
+</details>
 
-<h4>Example Calculation</h4>
+<!-- ================= SPEED & VELOCITY ================= -->
+<details>
+<summary>3. Speed & Velocity</summary>
+
+<h4>Speed</h4>
+<p>
+Speed = Distance travelled per unit time  
+Scalar quantity ဖြစ်ပြီး direction မပါဝင်။
+</p>
+
+<div class="formula">Speed = Distance / Time</div>
+
+<h4>Velocity</h4>
+<p>
+Velocity = Displacement per unit time  
+Vector quantity ဖြစ်ပြီး direction ပါဝင်။
+</p>
+
+<div class="formula">Velocity = Displacement / Time</div>
+
+<h4>Calculation</h4>
 <div class="example">
-<input id="d1" placeholder="Distance (m)">
-<input id="t1" placeholder="Time (s)">
-<button onclick="r1.innerText='Speed = '+(d1.value/t1.value)+' m/s'">Calculate Speed</button>
-<div id="r1" class="result"></div>
+<input id="s_d" placeholder="Distance (m)">
+<input id="s_t" placeholder="Time (s)">
+<button onclick="speedOut.innerText='Speed = '+(s_d.value/s_t.value)+' m/s'">Calculate Speed</button>
+<div id="speedOut" class="result"></div>
 </div>
 </details>
 
-<!-- ================= CHAPTER 2 ================= -->
+<!-- ================= ACCELERATION ================= -->
 <details>
-<summary>Chapter 2 – Laws of Motion</summary>
+<summary>4. Acceleration</summary>
 
-<h4>1. Newton’s First Law</h4>
+<h4>Concept</h4>
 <p>
-Object တစ်ခုသည် force မသက်ရောက်လျှင် rest သို့မဟုတ် uniform velocity ဖြင့် ဆက်လက်ရွေ့လျားနေမည်ဖြစ်သည်။
-ဒီ law ကို law of inertia ဟုလည်း ခေါ်သည်။
+Acceleration သည် velocity ပြောင်းလဲမှု၏ အမြန်နှုန်းဖြစ်သည်။
+Velocity ၏ magnitude သို့မဟုတ် direction ပြောင်းလဲလျှင်
+acceleration ရှိသည်။
 </p>
 
-<h4>2. Newton’s Second Law</h4>
-<p>
-Force သည် momentum ပြောင်းလဲမှု၏ အမြန်နှုန်းနှင့် တိုက်ရိုက်အချိုးကျသည်။
-</p>
-
-<div class="formula">F = ma</div>
-
-<h4>3. Newton’s Third Law</h4>
-<p>
-Action တစ်ခုတိုင်းအတွက် equal and opposite reaction တစ်ခုရှိသည်။
-</p>
-
-<h4>Momentum & Impulse</h4>
-<div class="formula">Momentum p = mv</div>
-<div class="formula">Impulse = Ft = Δp</div>
+<div class="formula">a = (v − u) / t</div>
 
 <h4>Units</h4>
-<p class="unit">Force (N), Momentum (kg·m/s)</p>
+<p class="unit">m/s²</p>
+
+<h4>Types</h4>
+<p>
+• Uniform acceleration<br>
+• Non-uniform acceleration
+</p>
+</details>
+
+<!-- ================= EQUATIONS OF MOTION ================= -->
+<details>
+<summary>5. Equations of Motion (Derivation Idea)</summary>
+
+<h4>First Equation</h4>
+<p>
+Acceleration = (change in velocity) / time  
+⇒ a = (v − u) / t
+</p>
+<div class="formula">v = u + at</div>
+
+<h4>Second Equation</h4>
+<p>
+Average velocity = (u + v)/2  
+Distance = average velocity × time
+</p>
+<div class="formula">s = ut + ½at²</div>
+
+<h4>Third Equation</h4>
+<div class="formula">v² = u² + 2as</div>
+
+<h4>Units</h4>
+<p class="unit">u, v (m/s), a (m/s²), s (m)</p>
+</details>
+
+<!-- ================= GRAPHS ================= -->
+<details>
+<summary>6. Motion Graphs</summary>
+
+<h4>Distance–Time Graph</h4>
+<p>
+Slope of s–t graph = speed
+</p>
+
+<h4>Velocity–Time Graph</h4>
+<p>
+Slope of v–t graph = acceleration  
+Area under graph = displacement
+</p>
+
+<button onclick="drawVT()">Show v–t Graph</button>
+<canvas id="vt" height="160"></canvas>
+</details>
+
+<!-- ================= NUMERICAL ================= -->
+<details>
+<summary>7. Numerical Example</summary>
+
+<p>
+A car starts from rest and accelerates uniformly at 2 m/s² for 5 s.  
+Find final velocity and distance.
+</p>
+
+<div class="formula">v = u + at = 0 + 2×5 = 10 m/s</div>
+<div class="formula">s = ut + ½at² = 25 m</div>
+</details>
+
+<!-- ================= SIMULATION ================= -->
+<details>
+<summary>8. Motion Simulation</summary>
+
+<p>
+Velocity ကို ပြောင်းပြီး object motion ကို ကြည့်နိုင်သည်။
+</p>
+
+<input id="sim_v" placeholder="Velocity">
+<button onclick="startSim()">Start Simulation</button>
+<canvas id="sim" height="120"></canvas>
+</details>
+
+<!-- ================= LAWS OF MOTION ================= -->
+<details>
+<summary>CHAPTER 2 – Laws of Motion (Newton)</summary>
+
+<h4>Introduction</h4>
+<p>
+Laws of Motion ကို Sir Isaac Newton က ဖော်ပြခဲ့ပြီး
+အရာဝတ္ထုတွေ ဘာကြောင့် လှုပ်ရှားသလဲဆိုတာကို ရှင်းပြပေးပါတယ်။
+</p>
+
+<!-- -------- FIRST LAW -------- -->
+<h4>Newton's First Law (Law of Inertia)</h4>
+<p>
+Rest မှာရှိတဲ့ object က rest မှာပဲနေမယ်၊  
+Uniform motion မှာရှိတဲ့ object က uniform motion နဲ့ပဲ သွားမယ်  
+<strong>External unbalanced force</strong> မရှိသရွေ့။
+</p>
+
+<p>
+Inertia ဆိုတာ object တစ်ခုရဲ့  
+သူ့အခြေအနေကို ပြောင်းလဲဖို့ ဆန့်ကျင်တဲ့ သဘောတရားဖြစ်ပါတယ်။
+</p>
+
+<p>
+Types of Inertia<br>
+• Inertia of rest<br>
+• Inertia of motion<br>
+• Inertia of direction
+</p>
+
+<!-- -------- SECOND LAW -------- -->
+<h4>Newton's Second Law</h4>
+<p>
+Object တစ်ခု၏ momentum ပြောင်းလဲမှု၏ အမြန်နှုန်းသည်  
+Applied force နှင့် တိုက်ရိုက်အချိုးကျသည်။
+</p>
+
+<div class="formula">Force ∝ change in momentum / time</div>
+<div class="formula">F = ma</div>
+
+<h4>Units</h4>
+<p class="unit">
+Force → Newton (N)<br>
+1 N = 1 kg·m/s²
+</p>
 
 <h4>Calculation</h4>
 <div class="example">
 <input id="m2" placeholder="Mass (kg)">
 <input id="a2" placeholder="Acceleration (m/s²)">
-<button onclick="r2.innerText='Force = '+(m2.value*a2.value)+' N'">Calculate Force</button>
-<div id="r2" class="result"></div>
+<button onclick="fout.innerText='Force = '+(m2.value*a2.value)+' N'">
+Calculate Force
+</button>
+<div id="fout" class="result"></div>
 </div>
+
+<!-- -------- THIRD LAW -------- -->
+<h4>Newton's Third Law</h4>
+<p>
+For every action, there is an equal and opposite reaction.
+</p>
+
+<p>
+Action နဲ့ reaction force တွေက  
+• magnitude တူ<br>
+• direction ဆန့်ကျင်<br>
+• different bodies ပေါ်မှာ သက်ရောက်
+</p>
+
+<!-- -------- MOMENTUM -------- -->
+<h4>Momentum</h4>
+<p>
+Momentum ဆိုတာ object တစ်ခုရဲ့  
+mass နဲ့ velocity ရဲ့ product ဖြစ်ပါတယ်။
+</p>
+
+<div class="formula">p = mv</div>
+
+<h4>Units</h4>
+<p class="unit">kg·m/s</p>
+
+<!-- -------- LAW OF CONSERVATION -------- -->
+<h4>Law of Conservation of Momentum</h4>
+<p>
+External force မရှိတဲ့ system တစ်ခုမှာ  
+total momentum သည် အမြဲတမ်း constant ဖြစ်သည်။
+</p>
+
+<div class="formula">
+m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂
+</div>
+
+<!-- -------- APPLICATIONS -------- -->
+<h4>Applications of Laws of Motion</h4>
+<p>
+• Seat belt<br>
+• Walking<br>
+• Recoil of gun<br>
+• Rocket motion
+</p>
+
+<!-- -------- SIMPLE SIMULATION -------- -->
+<h4>Force Simulation</h4>
+<p>Force တိုးလာလျှင် acceleration ဘယ်လိုပြောင်းလဲသလဲ ကြည့်ပါ</p>
+
+<input id="sim_f" placeholder="Force (N)">
+<input id="sim_m" placeholder="Mass (kg)">
+<button onclick="startForceSim()">Simulate</button>
+<canvas id="forceSim" height="120"></canvas>
+
 </details>
 
-<!-- ================= CHAPTER 3 ================= -->
+<!-- ================= WORK ENERGY POWER ================= -->
 <details>
-<summary>Chapter 3 – Work, Energy & Power</summary>
+<summary>CHAPTER 3 – Work, Energy & Power</summary>
 
+<h4>Introduction</h4>
+<p>
+Work, Energy & Power ဆိုတာ motion နဲ့ force တွေရဲ့
+အကျိုးသက်ရောက်မှုကို လေ့လာတဲ့ chapter ဖြစ်ပါတယ်။
+</p>
+
+<!-- -------- WORK -------- -->
 <h4>Work</h4>
 <p>
-Force တစ်ခုကြောင့် displacement ဖြစ်လာလျှင် work လုပ်သည်ဟု ဆိုသည်။
-Displacement မရှိရင် work မလုပ်ပါ။
+Force တစ်ခုက object ကို displacement ဖြစ်စေပါက
+Work လုပ်ထားသည်ဟု ခေါ်သည်။
 </p>
 
 <div class="formula">Work = Force × Displacement</div>
+<div class="formula">W = F s cosθ</div>
 
+<h4>Units</h4>
+<p class="unit">Joule (J)</p>
+
+<h4>Special Cases</h4>
+<p>
+θ = 0° → Maximum work  
+θ = 90° → Zero work  
+θ = 180° → Negative work
+</p>
+
+<!-- -------- ENERGY -------- -->
 <h4>Energy</h4>
 <p>
-Energy ဆိုတာ work လုပ်နိုင်စွမ်းဖြစ်ပြီး
-Kinetic Energy နှင့် Potential Energy ဟူ၍ ခွဲနိုင်သည်။
+Energy ဆိုတာ work လုပ်နိုင်တဲ့ စွမ်းရည် ဖြစ်ပါတယ်။
+</p>
+
+<h4>Types of Energy</h4>
+<p>
+• Kinetic Energy<br>
+• Potential Energy
+</p>
+
+<h4>Kinetic Energy</h4>
+<p>
+Moving object မှာရှိတဲ့ energy ဖြစ်ပါတယ်။
 </p>
 
 <div class="formula">KE = ½mv²</div>
-<div class="formula">PE = mgh</div>
 
-<h4>Power</h4>
-<div class="formula">Power = Work / Time</div>
-
-<h4>Law of Conservation of Energy</h4>
+<h4>Potential Energy</h4>
 <p>
-Energy ကို ဖန်တီးလို့မရ၊ ဖျက်ဆီးလို့မရဘဲ
-တစ်ပုံစံမှ တစ်ပုံစံသို့ ပြောင်းလဲသာနိုင်သည်။
+Height ကြောင့် object မှာရှိတဲ့ energy ဖြစ်ပါတယ်။
 </p>
 
-<h4>Calculation</h4>
+<div class="formula">PE = mgh</div>
+
+<h4>Units</h4>
+<p class="unit">Joule (J)</p>
+
+<!-- -------- WORK ENERGY THEOREM -------- -->
+<h4>Work-Energy Theorem</h4>
+<p>
+Object တစ်ခုအပေါ်လုပ်တဲ့ total work သည်
+kinetic energy ပြောင်းလဲမှုနဲ့ တူသည်။
+</p>
+
+<div class="formula">W = ΔKE</div>
+
+<!-- -------- POWER -------- -->
+<h4>Power</h4>
+<p>
+Unit time အတွင်းလုပ်တဲ့ work ကို power ဟုခေါ်သည်။
+</p>
+
+<div class="formula">Power = Work / Time</div>
+<div class="formula">P = Fv</div>
+
+<h4>Units</h4>
+<p class="unit">Watt (W)</p>
+
+<!-- -------- LAW OF CONSERVATION -------- -->
+<h4>Law of Conservation of Energy</h4>
+<p>
+Energy ကို မဖန်တီးနိုင်၊ မဖျက်ဆီးနိုင်ပဲ
+ပုံစံသာ ပြောင်းလဲနိုင်သည်။
+</p>
+
+<div class="formula">
+KE + PE = constant
+</div>
+
+<!-- -------- CALCULATIONS -------- -->
+<h4>Calculations</h4>
+
 <div class="example">
 <input id="m3" placeholder="Mass (kg)">
 <input id="v3" placeholder="Velocity (m/s)">
-<button onclick="r3.innerText='KE = '+(0.5*m3.value*v3.value*v3.value)+' J'">Calculate KE</button>
-<div id="r3" class="result"></div>
+<button onclick="keout.innerText='KE = '+(0.5*m3.value*v3.value*v3.value)+' J'">
+Calculate KE
+</button>
+<div id="keout" class="result"></div>
 </div>
+
+<div class="example">
+<input id="m4" placeholder="Mass (kg)">
+<input id="h4" placeholder="Height (m)">
+<button onclick="peout.innerText='PE = '+(m4.value*h4.value*9.8)+' J'">
+Calculate PE
+</button>
+<div id="peout" class="result"></div>
+</div>
+
+<!-- -------- NUMERICAL -------- -->
+<h4>Numerical Example</h4>
+<p>
+A body of mass 2 kg moves with velocity 10 m/s.  
+Find KE.
+</p>
+<div class="formula">KE = ½ × 2 × 10² = 100 J</div>
+
+<!-- -------- SIMULATION -------- -->
+<h4>Energy Simulation</h4>
+<p>Height ပြောင်းလဲရင် PE → KE ဘယ်လိုပြောင်းလဲလဲ ကြည့်ပါ</p>
+
+<input id="sim_h" placeholder="Height (m)">
+<button onclick="energySim()">Simulate</button>
+<canvas id="energySim" height="120"></canvas>
+
 </details>
 
-<!-- ================= CHAPTER 4 ================= -->
+<!-- ================= GRAVITATION ================= -->
 <details>
-<summary>Chapter 4 – Rotational Motion</summary>
+<summary>CHAPTER 4 – Gravitation</summary>
 
-<h4>Concept</h4>
+<h4>Introduction</h4>
 <p>
-Object တစ်ခုသည် axis တစ်ခုအပေါ် လှည့်လည်နေပါက rotational motion ဖြစ်သည်။
-Linear quantity များကို angular quantity များနှင့် ဆက်စပ်နိုင်သည်။
+Gravitation ဆိုတာ mass ရှိတဲ့ အရာဝတ္ထုတိုင်းကြားမှာ
+ဆွဲအားရှိနေခြင်းကို ဆိုလိုပါတယ်။
 </p>
 
-<div class="formula">Angular velocity ω = θ / t</div>
-<div class="formula">Linear velocity v = rω</div>
-<div class="formula">Torque τ = Iα</div>
+<!-- -------- UNIVERSAL LAW -------- -->
+<h4>Universal Law of Gravitation</h4>
+<p>
+Mass နှစ်ခုကြားရှိ ဆွဲအားသည်
+သူတို့ရဲ့ mass များနှင့် တိုက်ရိုက်အချိုးကျပြီး
+အကွာအဝေး၏ စတုရန်းနှင့် ပြောင်းပြန်အချိုးကျသည်။
+</p>
+
+<div class="formula">
+F = G (m₁m₂ / r²)
+</div>
 
 <h4>Units</h4>
-<p class="unit">ω (rad/s), Torque (N·m)</p>
-
-<h4>Calculation</h4>
-<div class="example">
-<input id="th4" placeholder="Angle (rad)">
-<input id="t4" placeholder="Time (s)">
-<button onclick="r4.innerText='ω = '+(th4.value/t4.value)+' rad/s'">Calculate</button>
-<div id="r4" class="result"></div>
-</div>
-</details>
-
-<!-- ================= CHAPTER 5 ================= -->
-<details>
-<summary>Chapter 5 – Fluid Mechanics</summary>
-
-<h4>Basic Idea</h4>
-<p>
-Fluid ဆိုသည်မှာ liquid နှင့် gas များဖြစ်ပြီး flow ဖြစ်နိုင်သည်။
+<p class="unit">
+Force → Newton (N)<br>
+G = 6.67 × 10⁻¹¹ N·m²/kg²
 </p>
 
-<div class="formula">Density ρ = m / V</div>
-<div class="formula">Continuity: A₁v₁ = A₂v₂</div>
-<div class="formula">Bernoulli: P + ½ρv² + ρgh = constant</div>
+<!-- -------- FREE FALL -------- -->
+<h4>Free Fall</h4>
+<p>
+Gravitational force အောက်မှာသာ လှုပ်ရှားနေသော
+object ကို free fall motion လို့ခေါ်သည်။
+</p>
 
-<h4>Calculation</h4>
+<div class="formula">g ≈ 9.8 m/s²</div>
+
+<h4>Equations</h4>
+<div class="formula">v = u + gt</div>
+<div class="formula">s = ut + ½gt²</div>
+
+<!-- -------- MASS & WEIGHT -------- -->
+<h4>Mass & Weight</h4>
+<p>
+Mass → object ထဲရှိ matter အရေအတွက်  
+Weight → gravitational force ကြောင့် ဖြစ်ပေါ်သော ဆွဲအား
+</p>
+
+<div class="formula">Weight = mg</div>
+
+<h4>Units</h4>
+<p class="unit">
+Mass → kg<br>
+Weight → N
+</p>
+
+<!-- -------- THRUST & PRESSURE -------- -->
+<h4>Thrust & Pressure</h4>
+<p>
+Thrust ဆိုတာ surface တစ်ခုပေါ် perpendicular ဖြစ်တဲ့ force ဖြစ်ပါတယ်။
+</p>
+
+<div class="formula">Pressure = Force / Area</div>
+
+<h4>Units</h4>
+<p class="unit">Pascal (Pa)</p>
+
+<!-- -------- BUOYANCY -------- -->
+<h4>Buoyancy</h4>
+<p>
+Fluid ထဲထည့်ထားသော object ပေါ်မှာ
+upward force ဖြစ်ပေါ်ခြင်းကို buoyancy လို့ခေါ်သည်။
+</p>
+
+<!-- -------- ARCHIMEDES PRINCIPLE -------- -->
+<h4>Archimedes’ Principle</h4>
+<p>
+Object တစ်ခုကို fluid ထဲထည့်လျှင်
+သူက ဖယ်ထုတ်လိုက်တဲ့ fluid ရဲ့ weight နဲ့ညီတဲ့
+upward force ရရှိသည်။
+</p>
+
+<!-- -------- DENSITY -------- -->
+<h4>Density</h4>
+<div class="formula">Density = Mass / Volume</div>
+<p class="unit">kg/m³</p>
+
+<!-- -------- SATELLITES -------- -->
+<h4>Satellites</h4>
+<p>
+Satellite ဆိုတာ planet တစ်ခုကို
+အဝိုင်းပတ်လည်ပတ်နေတဲ့ object ဖြစ်ပါတယ်။
+</p>
+
+<div class="formula">Orbital velocity = √(GM/r)</div>
+
+<h4>Escape Velocity</h4>
+<p>
+Planet ရဲ့ gravitational field ကို
+လွတ်မြောက်ဖို့လိုအပ်တဲ့ အနည်းဆုံး velocity ဖြစ်ပါတယ်။
+</p>
+
+<div class="formula">vₑ = √(2GM/R)</div>
+
+<!-- -------- CALCULATIONS -------- -->
+<h4>Calculations</h4>
+
 <div class="example">
 <input id="m5" placeholder="Mass (kg)">
-<input id="v5" placeholder="Volume (m³)">
-<button onclick="r5.innerText='Density = '+(m5.value/v5.value)+' kg/m³'">Calculate</button>
+<button onclick="wout.innerText='Weight = '+(m5.value*9.8)+' N'">
+Calculate Weight
+</button>
+<div id="wout" class="result"></div>
+</div>
+
+<div class="example">
+<input id="m6" placeholder="Mass (kg)">
+<input id="v6" placeholder="Volume (m³)">
+<button onclick="dout.innerText='Density = '+(m6.value/v6.value)+' kg/m³'">
+Calculate Density
+</button>
+<div id="dout" class="result"></div>
+</div>
+
+<!-- -------- NUMERICAL -------- -->
+<h4>Numerical Example</h4>
+<p>
+Mass of body = 5 kg  
+Find weight.
+</p>
+<div class="formula">W = 5 × 9.8 = 49 N</div>
+
+<!-- -------- SIMULATION -------- -->
+<h4>Free Fall Simulation</h4>
+<p>Object ကို drop လုပ်ရင် ဘယ်လို fall ဖြစ်လဲ ကြည့်ပါ</p>
+
+<button onclick="freeFall()">Start Free Fall</button>
+<canvas id="fall" height="120"></canvas>
+
+</details>
+<!-- ================= CHAPTER 5 ================= -->
+<details>
+<summary>CHAPTER 5 – Sound & Waves</summary>
+
+<h4>Introduction</h4>
+<p>
+Wave ဆိုတာ energy ကို matter မသယ်ဘဲ သယ်ဆောင်ပေးတဲ့ disturbance ဖြစ်ပါတယ်။
+Sound wave က mechanical wave ဖြစ်ပြီး medium မရှိရင် မပြန့်နိုင်ပါ။
+</p>
+
+<!-- -------- TYPES OF WAVES -------- -->
+<h4>Types of Waves</h4>
+<p>
+1️⃣ Transverse Wave – vibration ⟂ propagation  
+2️⃣ Longitudinal Wave – vibration ∥ propagation (Sound)
+</p>
+
+<!-- -------- BASIC TERMS -------- -->
+<h4>Wave Terminology</h4>
+<p>
+Wavelength (λ) – crest to crest distance  
+Frequency (f) – တစ်စက္ကန့်လှိုင်းအရေအတွက်  
+Time Period (T) – wave တစ်ခုပြည့်စုံဖို့အချိန်  
+Amplitude (A) – maximum displacement
+</p>
+
+<div class="formula">T = 1 / f</div>
+
+<!-- -------- WAVE SPEED -------- -->
+<h4>Wave Velocity</h4>
+<div class="formula">v = fλ</div>
+
+<h4>Units</h4>
+<p class="unit">
+Velocity → m/s<br>
+Frequency → Hz<br>
+Wavelength → m
+</p>
+
+<!-- -------- SOUND -------- -->
+<h4>Sound Wave</h4>
+<p>
+Sound wave သည် longitudinal wave ဖြစ်ပြီး
+compression နှင့် rarefaction များပါဝင်သည်။
+</p>
+
+<div class="formula">Speed of sound in air ≈ 343 m/s</div>
+
+<!-- -------- FACTORS -------- -->
+<h4>Factors Affecting Speed of Sound</h4>
+<p>
+✔ Medium (solid > liquid > gas)  
+✔ Temperature  
+✔ Humidity
+</p>
+
+<!-- -------- ECHO -------- -->
+<h4>Echo</h4>
+<p>
+Sound reflection ကို echo လို့ခေါ်ပြီး
+အနည်းဆုံး 0.1 s နောက်ကျရပါမယ်။
+</p>
+
+<div class="formula">Distance = (v × t) / 2</div>
+
+<!-- -------- LOUDNESS & PITCH -------- -->
+<h4>Loudness & Pitch</h4>
+<p>
+Loudness → Amplitude အပေါ်မူတည်  
+Pitch → Frequency အပေါ်မူတည်
+</p>
+
+<!-- -------- ULTRASOUND -------- -->
+<h4>Ultrasound</h4>
+<p>
+20 kHz ထက်ပိုသော frequency များကို ultrasound လို့ခေါ်သည်။
+Medical imaging နှင့် SONAR တွင်အသုံးပြုသည်။
+</p>
+
+<!-- -------- CALCULATIONS -------- -->
+<h4>Calculations</h4>
+
+<div class="example">
+<input id="f5" placeholder="Frequency (Hz)">
+<input id="l5" placeholder="Wavelength (m)">
+<button onclick="r5.innerText='Wave Speed = '+(f5.value*l5.value)+' m/s'">
+Calculate Speed
+</button>
 <div id="r5" class="result"></div>
 </div>
+
+<div class="example">
+<input id="t5" placeholder="Echo Time (s)">
+<button onclick="r5b.innerText='Distance = '+((343*t5.value)/2).toFixed(2)+' m'">
+Calculate Distance
+</button>
+<div id="r5b" class="result"></div>
+</div>
+
+<!-- -------- NUMERICAL -------- -->
+<h4>Numerical Example</h4>
+<p>
+Frequency = 170 Hz  
+Wavelength = 2 m
+</p>
+<div class="formula">v = fλ = 170 × 2 = 340 m/s</div>
+
+<!-- -------- WAVE SIMULATION -------- -->
+<h4>Wave Animation</h4>
+<p>Wave propagation ကို animation ဖြင့်ကြည့်ပါ</p>
+
+<button onclick="startSoundWave()">Start Wave</button>
+<canvas id="soundwave" height="150"></canvas>
+
 </details>
 
 <!-- ================= CHAPTER 6 ================= -->
 <details>
-<summary>Chapter 6 – Thermal Physics</summary>
+<summary>CHAPTER 6 – Electricity</summary>
 
-<h4>Heat & Temperature</h4>
+<h4>Introduction</h4>
 <p>
-Heat သည် energy transfer ဖြစ်ပြီး
-Temperature သည် particle များ၏ average kinetic energy ကို ဖော်ပြသည်။
+Electricity ဆိုတာ charge များ၏ flow ဖြစ်ပြီး
+current, voltage, resistance များဖြင့်ဖော်ပြနိုင်သည်။
 </p>
 
-<div class="formula">Q = mcΔT</div>
-<div class="formula">ΔU = Q − W</div>
+<!-- -------- ELECTRIC CHARGE -------- -->
+<h4>Electric Charge</h4>
+<p>
+Charge သည် positive နှင့် negative နှစ်မျိုးရှိပြီး
+unit ကို Coulomb (C) ဖြင့်တိုင်းတာသည်။
+</p>
 
-<h4>Calculation</h4>
+<div class="formula">Q = It</div>
+
+<!-- -------- ELECTRIC CURRENT -------- -->
+<h4>Electric Current</h4>
+<p>
+Current သည် unit time အတွင်း charge flow ဖြစ်သည်။
+</p>
+
+<div class="formula">I = Q / t</div>
+
+<h4>Units</h4>
+<p class="unit">Current → Ampere (A)</p>
+
+<!-- -------- POTENTIAL DIFFERENCE -------- -->
+<h4>Potential Difference</h4>
+<p>
+Voltage ဆိုတာ charge တစ်ခုကို လှုပ်ရှားစေရန်
+လုပ်ပေးရသော work ဖြစ်သည်။
+</p>
+
+<div class="formula">V = W / Q</div>
+
+<!-- -------- OHM'S LAW -------- -->
+<h4>Ohm’s Law</h4>
+<p>
+Constant temperature မှာ
+current သည် voltage နဲ့ တိုက်ရိုက်အချိုးကျသည်။
+</p>
+
+<div class="formula">V = IR</div>
+
+<h4>Resistance</h4>
+<div class="formula">R = ρL / A</div>
+
+<h4>Units</h4>
+<p class="unit">Resistance → Ohm (Ω)</p>
+
+<!-- -------- ELECTRIC POWER -------- -->
+<h4>Electric Power</h4>
+<div class="formula">P = VI</div>
+<div class="formula">P = I²R</div>
+
+<h4>Units</h4>
+<p class="unit">Power → Watt (W)</p>
+
+<!-- -------- SERIES & PARALLEL -------- -->
+<h4>Series Circuit</h4>
+<div class="formula">R = R₁ + R₂</div>
+
+<h4>Parallel Circuit</h4>
+<div class="formula">1/R = 1/R₁ + 1/R₂</div>
+
+<!-- -------- HEATING EFFECT -------- -->
+<h4>Heating Effect of Current</h4>
+<div class="formula">H = I²Rt</div>
+
+<!-- -------- CALCULATIONS -------- -->
+<h4>Calculations</h4>
+
 <div class="example">
-<input id="m6" placeholder="Mass">
-<input id="c6" placeholder="Specific Heat">
-<input id="t6" placeholder="ΔT">
-<button onclick="r6.innerText='Heat = '+(m6.value*c6.value*t6.value)+' J'">Calculate</button>
-<div id="r6" class="result"></div>
+<input id="v6" placeholder="Voltage (V)">
+<input id="r6" placeholder="Resistance (Ω)">
+<button onclick="r6o.innerText='Current = '+(v6.value/r6.value)+' A'">
+Calculate Current
+</button>
+<div id="r6o" class="result"></div>
 </div>
+
+<div class="example">
+<input id="i6b" placeholder="Current (A)">
+<input id="r6b" placeholder="Resistance (Ω)">
+<button onclick="r6p.innerText='Power = '+(i6b.value*i6b.value*r6b.value)+' W'">
+Calculate Power
+</button>
+<div id="r6p" class="result"></div>
+</div>
+
+<!-- -------- NUMERICAL -------- -->
+<h4>Numerical Example</h4>
+<p>
+V = 12 V, R = 6 Ω
+</p>
+<div class="formula">I = V/R = 12/6 = 2 A</div>
+
+<!-- -------- CIRCUIT SIMULATION -------- -->
+<h4>Electric Circuit Simulation</h4>
+<p>Battery + Resistor circuit animation</p>
+
+<button onclick="startCircuit()">Start Simulation</button>
+<canvas id="elec" height="120"></canvas>
+
 </details>
 
 <!-- ================= CHAPTER 7 ================= -->
 <details>
-<summary>Chapter 7 – Waves & Sound</summary>
+<summary>CHAPTER 7 – Magnetism & Electromagnetism</summary>
 
-<h4>Concept</h4>
+<h4>Introduction</h4>
 <p>
-Wave သည် matter မသယ်ဘဲ energy ကို သယ်ဆောင်သည်။
-Sound wave သည် longitudinal wave ဖြစ်သည်။
+Magnetism ဆိုတာ moving electric charges ကြောင့် ဖြစ်ပေါ်လာတဲ့
+phenomenon ဖြစ်ပါတယ်။
+Magnetic field ကို B နဲ့ ကိုယ်စားပြုပါတယ်။
 </p>
 
-<div class="formula">v = fλ</div>
+<!-- -------- MAGNET -------- -->
+<h4>Magnet & Magnetic Field</h4>
+<p>
+Magnet တစ်ခုမှာ North pole နှင့် South pole ရှိပြီး
+like poles repel၊ unlike poles attract ဖြစ်ပါတယ်။
+</p>
 
-<h4>Calculation</h4>
+<div class="formula">Magnetic field → B</div>
+<p class="unit">Tesla (T)</p>
+
+<!-- -------- FORCE ON CURRENT -------- -->
+<h4>Force on a Current-Carrying Conductor</h4>
+<p>
+Magnetic field ထဲမှာ current carrying conductor ထည့်ရင်
+force လာပါမယ်။
+</p>
+
+<div class="formula">F = B I L</div>
+
+<h4>Fleming’s Left Hand Rule</h4>
+<p>
+First finger → Field  
+Thumb → Force  
+Second finger → Current
+</p>
+
+<!-- -------- ELECTROMAGNET -------- -->
+<h4>Electromagnet</h4>
+<p>
+Current flowing through coil ကြောင့်
+temporary magnet ဖြစ်လာတာကို electromagnet လို့ခေါ်ပါတယ်။
+</p>
+
+<div class="formula">Magnetic field ∝ Current</div>
+
+<!-- -------- ELECTROMAGNETIC INDUCTION -------- -->
+<h4>Electromagnetic Induction</h4>
+<p>
+Magnetic flux ပြောင်းလဲလာတဲ့အခါ
+induced current ဖြစ်ပေါ်ပါတယ်။
+</p>
+
+<div class="formula">Induced EMF ∝ dΦ / dt</div>
+
+<h4>Faraday’s Law</h4>
+<div class="formula">ε = − dΦ / dt</div>
+
+<h4>Lenz’s Law</h4>
+<p>
+Induced current သည် change ကို ဆန့်ကျင်သွားသည်။
+</p>
+
+<!-- -------- ELECTRIC MOTOR -------- -->
+<h4>Electric Motor</h4>
+<p>
+Electric motor သည် electrical energy ကို
+mechanical energy ပြောင်းလဲပေးသော device ဖြစ်ပါတယ်။
+</p>
+
+<!-- -------- ELECTRIC GENERATOR -------- -->
+<h4>Electric Generator</h4>
+<p>
+Mechanical energy ကို electrical energy ပြောင်းလဲပေးပါတယ်။
+</p>
+
+<!-- -------- TRANSFORMER -------- -->
+<h4>Transformer</h4>
+<p>
+AC voltage ကို step-up / step-down လုပ်ပေးပါတယ်။
+</p>
+
+<div class="formula">Vp / Vs = Np / Ns</div>
+
+<!-- -------- CALCULATIONS -------- -->
+<h4>Calculations</h4>
+
 <div class="example">
-<input id="f7" placeholder="Frequency (Hz)">
-<input id="l7" placeholder="Wavelength (m)">
-<button onclick="r7.innerText='Speed = '+(f7.value*l7.value)+' m/s'">Calculate</button>
+<input id="b7" placeholder="Magnetic Field B (T)">
+<input id="i7" placeholder="Current I (A)">
+<input id="l7" placeholder="Length L (m)">
+<button onclick="r7.innerText='Force = '+(b7.value*i7.value*l7.value)+' N'">
+Calculate Force
+</button>
 <div id="r7" class="result"></div>
 </div>
+
+<div class="example">
+<input id="vp7" placeholder="Primary Voltage (V)">
+<input id="np7" placeholder="Primary Turns">
+<input id="ns7" placeholder="Secondary Turns">
+<button onclick="r7b.innerText='Secondary Voltage = '+(vp7.value*ns7.value/np7.value)+' V'">
+Calculate
+</button>
+<div id="r7b" class="result"></div>
+</div>
+
+<!-- -------- SIMULATIONS -------- -->
+<h4>Magnetic Field Simulation</h4>
+<p>Moving charge → magnetic effect visualization</p>
+
+<button onclick="startMag()">Start Simulation</button>
+<canvas id="mag" height="140"></canvas>
+
 </details>
 
 <!-- ================= CHAPTER 8 ================= -->
 <details>
-<summary>Chapter 8 – Optics</summary>
+<summary>CHAPTER 8 – Light & Optics</summary>
 
-<h4>Reflection & Refraction</h4>
+<h4>Nature of Light</h4>
 <p>
-Reflection သည် surface ပေါ်မှ ပြန်လှန်ခြင်းဖြစ်ပြီး
-Refraction သည် medium ပြောင်းလဲရာမှ direction ပြောင်းလဲခြင်းဖြစ်သည်။
+Light သည် electromagnetic wave ဖြစ်ပြီး
+vacuum မှာပါ travel လုပ်နိုင်သည်။
+Speed of light in vacuum ≈ 3 × 10⁸ m/s ဖြစ်သည်။
 </p>
 
-<div class="formula">1/f = 1/u + 1/v</div>
+<!-- -------- REFLECTION -------- -->
+<h4>Reflection of Light</h4>
+<p>
+Reflection ဆိုတာ surface ပေါ်မှ light ပြန်လှန်ခြင်းဖြစ်သည်။
+</p>
+
+<div class="formula">∠i = ∠r</div>
+
+<h4>Types of Reflection</h4>
+<p>
+Regular reflection – smooth surface  
+Diffuse reflection – rough surface
+</p>
+
+<!-- -------- SPHERICAL MIRRORS -------- -->
+<h4>Spherical Mirrors</h4>
+<p>
+Concave mirror နှင့် Convex mirror ဟူ၍ နှစ်မျိုးရှိသည်။
+</p>
+
+<div class="formula">1/f = 1/v + 1/u</div>
+<div class="formula">Magnification m = −v/u</div>
+
+<h4>Uses</h4>
+<p>
+Concave → headlights, shaving mirror  
+Convex → rear-view mirror
+</p>
+
+<!-- -------- REFRACTION -------- -->
+<h4>Refraction of Light</h4>
+<p>
+Medium ပြောင်းလဲရာမှာ speed ပြောင်းလဲခြင်းကြောင့်
+direction ပြောင်းသွားတာကို refraction လို့ခေါ်သည်။
+</p>
+
 <div class="formula">n = sin i / sin r</div>
+
+<!-- -------- LENS -------- -->
+<h4>Lenses</h4>
+<p>
+Convex lens နှင့် Concave lens ဟူ၍ နှစ်မျိုးရှိသည်။
+</p>
+
+<div class="formula">1/f = 1/v + 1/u</div>
+
+<h4>Power of Lens</h4>
+<div class="formula">P = 1 / f</div>
+<p class="unit">Dioptre (D)</p>
+
+<!-- -------- DISPERSION -------- -->
+<h4>Dispersion</h4>
+<p>
+White light ကို prism မှာဖြတ်သန်းစေတဲ့အခါ
+VIBGYOR အရောင် ၇ မျိုးအဖြစ် ခွဲထွက်သွားသည်။
+</p>
+
+<!-- -------- HUMAN EYE -------- -->
+<h4>Human Eye</h4>
+<p>
+Eye lens သည် convex lens ဖြစ်ပြီး
+retina ပေါ်မှာ image ဖြစ်ပေါ်သည်။
+</p>
+
+<!-- -------- DEFECTS OF VISION -------- -->
+<h4>Defects of Vision</h4>
+<p>
+Myopia → concave lens  
+Hypermetropia → convex lens  
+Presbyopia → bifocal lens
+</p>
+
+<!-- -------- CALCULATIONS -------- -->
+<h4>Calculations</h4>
+
+<div class="example">
+<input id="u8" placeholder="Object Distance (u)">
+<input id="v8" placeholder="Image Distance (v)">
+<button onclick="r8.innerText='Focal Length = '+(1/((1/v8.value)-(1/u8.value))).toFixed(2)">
+Calculate f
+</button>
+<div id="r8" class="result"></div>
+</div>
+
+<div class="example">
+<input id="f8" placeholder="Focal Length (m)">
+<button onclick="r8b.innerText='Power = '+(1/f8.value)+' D'">
+Calculate Power
+</button>
+<div id="r8b" class="result"></div>
+</div>
+
+<!-- -------- RAY DIAGRAM -------- -->
+<h4>Ray Diagram – Convex Lens</h4>
+<p>Object → lens → image formation visualization</p>
+
+<button onclick="startRay()">Show Ray Diagram</button>
+<canvas id="ray" height="180"></canvas>
+
 </details>
 
 <!-- ================= CHAPTER 9 ================= -->
 <details>
-<summary>Chapter 9 – Electricity</summary>
+<summary>CHAPTER 9 – Modern Physics</summary>
 
-<h4>Electric Current</h4>
+<h4>Introduction</h4>
 <p>
-Electric current သည် charge များ၏ flow ဖြစ်ပြီး
-Ohm’s law က circuit behavior ကို ရှင်းပြသည်။
+Modern Physics သည် microscopic world (atom, nucleus, photons) ကို
+လေ့လာသည့် physics အပိုင်းဖြစ်ပြီး
+classical physics မရှင်းနိုင်သော phenomena များကို ရှင်းပြနိုင်သည်။
 </p>
 
-<div class="formula">V = IR</div>
-<div class="formula">P = VI</div>
-
-<h4>Calculation</h4>
-<div class="example">
-<input id="i9" placeholder="Current (A)">
-<input id="r9" placeholder="Resistance (Ω)">
-<button onclick="r9o.innerText='Voltage = '+(i9.value*r9.value)+' V'">Calculate</button>
-<div id="r9o" class="result"></div>
-</div>
-</details>
-
-<!-- ================= CHAPTER 10 ================= -->
-<details>
-<summary>Chapter 10 – Magnetism & Modern Physics</summary>
-
-<h4>Magnetism</h4>
+<!-- -------- ATOMIC MODELS -------- -->
+<h4>Atomic Models</h4>
 <p>
-Moving charge များကြောင့် magnetic field ဖြစ်ပေါ်သည်။
+Dalton → Thomson → Rutherford → Bohr
 </p>
 
-<div class="formula">F = BIL</div>
-
-<h4>Modern Physics</h4>
+<h4>Bohr’s Atomic Model</h4>
 <p>
-Modern physics သည် atom, nucleus နှင့် quantum theory ကို လေ့လာသည်။
+Electrons သည် discrete energy levels တွင်သာ လှည့်လည်နိုင်ပြီး
+transition ဖြစ်ရာမှ photon ထုတ်လွှတ်/စုပ်ယူသည်။
+</p>
+
+<div class="formula">Eₙ = −13.6 / n² (eV)</div>
+
+<!-- -------- PHOTOELECTRIC EFFECT -------- -->
+<h4>Photoelectric Effect</h4>
+<p>
+Threshold frequency ထက်ကြီးသော light ရောက်လာပါက
+metal surface မှ electrons ထွက်လာသည်။
+Einstein က photon concept ဖြင့် ရှင်းပြခဲ့သည်။
+</p>
+
+<div class="formula">E = hf</div>
+<div class="formula">KE = hf − φ</div>
+
+<h4>Units</h4>
+<p class="unit">
+h = 6.63 × 10⁻³⁴ J·s<br>
+Frequency → Hz
+</p>
+
+<!-- -------- DE BROGLIE -------- -->
+<h4>de Broglie Matter Waves</h4>
+<p>
+Moving particle တိုင်းမှာ wave nature ရှိသည်။
+</p>
+
+<div class="formula">λ = h / p</div>
+<div class="formula">p = mv</div>
+
+<!-- -------- NUCLEAR PHYSICS -------- -->
+<h4>Nuclear Physics</h4>
+<p>
+Nucleus ထဲမှာ protons နှင့် neutrons ပါဝင်ပြီး
+nuclear forces ကြောင့် စည်းကပ်ထားသည်။
+</p>
+
+<h4>Radioactivity</h4>
+<p>
+α, β, γ radiation များဖြင့် spontaneous decay ဖြစ်သည်။
+</p>
+
+<div class="formula">N = N₀ e<sup>−λt</sup></div>
+
+<h4>Half-life</h4>
+<div class="formula">T½ = 0.693 / λ</div>
+
+<!-- -------- MASS ENERGY -------- -->
+<h4>Mass–Energy Relation</h4>
+<p>
+Mass နှင့် energy သည် equivalent ဖြစ်သည်။
 </p>
 
 <div class="formula">E = mc²</div>
-<div class="formula">E = hf</div>
+
+<!-- -------- NUCLEAR REACTIONS -------- -->
+<h4>Nuclear Fission</h4>
+<p>
+Heavy nucleus ကို ခွဲခြင်းဖြင့် energy ထုတ်လုပ်သည်
+(Nuclear reactor)။
+</p>
+
+<h4>Nuclear Fusion</h4>
+<p>
+Light nuclei များ ပေါင်းစည်းခြင်းဖြင့်
+အလွန်ကြီးမားသော energy ထုတ်လုပ်သည် (Sun)။
+</p>
+
+<!-- -------- CALCULATIONS -------- -->
+<h4>Calculations</h4>
+
+<div class="example">
+<input id="f9" placeholder="Frequency (Hz)">
+<button onclick="r9.innerText='Photon Energy = '+(6.63e-34*f9.value).toExponential(2)+' J'">
+Calculate Photon Energy
+</button>
+<div id="r9" class="result"></div>
+</div>
+
+<div class="example">
+<input id="m9" placeholder="Mass (kg)">
+<button onclick="r9b.innerText='Energy = '+(m9.value*9e16).toExponential(2)+' J'">
+Calculate E = mc²
+</button>
+<div id="r9b" class="result"></div>
+</div>
+
+<!-- -------- ANIMATION -------- -->
+<h4>Atomic Energy Level Transition</h4>
+<p>Electron jump → photon emission visualization</p>
+
+<button onclick="startAtom()">Start Animation</button>
+<canvas id="atom" height="180"></canvas>
+
 </details>
 
 </section>
+
+<script>
+// v-t graph
+function drawVT(){
+let c=vt,ctx=c.getContext("2d");
+ctx.clearRect(0,0,c.width,c.height);
+ctx.beginPath();
+ctx.moveTo(20,140);
+ctx.lineTo(300,40);
+ctx.strokeStyle="#38bdf8";
+ctx.stroke();
+ctx.fillText("v",5,20);
+ctx.fillText("t",310,150);
+}
+
+// simulation
+function startSim(){
+let c=sim,ctx=c.getContext("2d");
+let x=10;
+let v=Number(sim_v.value)||2;
+let id=setInterval(()=>{
+ctx.clearRect(0,0,c.width,c.height);
+ctx.beginPath();
+ctx.arc(x,60,10,0,Math.PI*2);
+ctx.fillStyle="#22d3ee";
+ctx.fill();
+x+=v;
+if(x>c.width) clearInterval(id);
+},30);
+}
+</script>
+
+<script>
+function startForceSim(){
+let c=document.getElementById("forceSim");
+let ctx=c.getContext("2d");
+let x=20;
+let F=Number(sim_f.value)||10;
+let m=Number(sim_m.value)||5;
+let a=F/m;
+let id=setInterval(()=>{
+ctx.clearRect(0,0,c.width,c.height);
+ctx.beginPath();
+ctx.arc(x,60,10,0,Math.PI*2);
+ctx.fillStyle="#38bdf8";
+ctx.fill();
+x+=a;
+if(x>c.width) clearInterval(id);
+},30);
+}
+</script
+
+<script>
+function energySim(){
+let c=document.getElementById("energySim");
+let ctx=c.getContext("2d");
+let h=Number(sim_h.value)||50;
+let y=10;
+let id=setInterval(()=>{
+ctx.clearRect(0,0,c.width,c.height);
+ctx.beginPath();
+ctx.arc(200,y,10,0,Math.PI*2);
+ctx.fillStyle="#22d3ee";
+ctx.fill();
+y+=h/20;
+if(y>100) clearInterval(id);
+},40);
+}
+</script>
+
+<script>
+function freeFall(){
+let c=document.getElementById("fall");
+let ctx=c.getContext("2d");
+let y=10;
+let id=setInterval(()=>{
+ctx.clearRect(0,0,c.width,c.height);
+ctx.beginPath();
+ctx.arc(200,y,10,0,Math.PI*2);
+ctx.fillStyle="#38bdf8";
+ctx.fill();
+y+=5;
+if(y>110) clearInterval(id);
+},30);
+}
+</script>
+
+<script>
+function startSoundWave(){
+let c=document.getElementById("soundwave");
+let ctx=c.getContext("2d");
+let t=0;
+let id=setInterval(()=>{
+ctx.clearRect(0,0,c.width,c.height);
+ctx.beginPath();
+for(let x=0;x<c.width;x++){
+let y=75+25*Math.sin((x+t)/15);
+ctx.lineTo(x,y);
+}
+ctx.strokeStyle="#38bdf8";
+ctx.stroke();
+t+=4;
+},40);
+}
+</script>
+
+<script>
+function startCircuit(){
+let c=document.getElementById("elec");
+let ctx=c.getContext("2d");
+let x=60;
+let id=setInterval(()=>{
+ctx.clearRect(0,0,c.width,c.height);
+
+ctx.strokeStyle="#38bdf8";
+ctx.strokeRect(40,40,280,40);
+
+ctx.fillText("Battery",10,65);
+ctx.fillText("Resistor",160,35);
+
+ctx.beginPath();
+ctx.arc(x,60,6,0,Math.PI*2);
+ctx.fillStyle="#22d3ee";
+ctx.fill();
+x+=4;
+if(x>320) x=60;
+},40);
+}
+</script>
+
+<script>
+function startMag(){
+let c=document.getElementById("mag");
+let ctx=c.getContext("2d");
+let x=20;
+let id=setInterval(()=>{
+ctx.clearRect(0,0,c.width,c.height);
+
+for(let i=0;i<8;i++){
+ctx.beginPath();
+ctx.arc(180,70,15+i*10,0,Math.PI*2);
+ctx.strokeStyle="#1e40af";
+ctx.stroke();
+}
+
+ctx.beginPath();
+ctx.arc(x,70,6,0,Math.PI*2);
+ctx.fillStyle="#38bdf8";
+ctx.fill();
+
+x+=4;
+if(x>340) x=20;
+},40);
+}
+</script>
+
+<script>
+function startRay(){
+let c=document.getElementById("ray");
+let ctx=c.getContext("2d");
+
+ctx.clearRect(0,0,c.width,c.height);
+
+// Lens
+ctx.strokeStyle="#38bdf8";
+ctx.beginPath();
+ctx.moveTo(180,10);
+ctx.lineTo(180,170);
+ctx.stroke();
+
+// Object
+ctx.fillRect(80,90,6,40);
+
+// Rays
+ctx.beginPath();
+ctx.moveTo(83,90);
+ctx.lineTo(180,90);
+ctx.lineTo(260,120);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(83,110);
+ctx.lineTo(180,110);
+ctx.lineTo(260,110);
+ctx.stroke();
+
+// Image
+ctx.fillRect(260,110,6,-30);
+}
+</script>
+
+<script>
+function startAtom(){
+let c=document.getElementById("atom");
+let ctx=c.getContext("2d");
+let y=130, up=true;
+let id=setInterval(()=>{
+ctx.clearRect(0,0,c.width,c.height);
+
+// Nucleus
+ctx.beginPath();
+ctx.arc(180,90,8,0,Math.PI*2);
+ctx.fillStyle="#facc15";
+ctx.fill();
+
+// Energy levels
+for(let r=30;r<=70;r+=20){
+ctx.beginPath();
+ctx.arc(180,90,r,0,Math.PI*2);
+ctx.strokeStyle="#1e293b";
+ctx.stroke();
+}
+
+// Electron
+ctx.beginPath();
+ctx.arc(180,y,6,0,Math.PI*2);
+ctx.fillStyle="#38bdf8";
+ctx.fill();
+
+y += up ? -2 : 2;
+if(y<50) up=false;
+if(y>130){ clearInterval(id); }
+},40);
+}
+</script>
+
 </body>
 </html>
