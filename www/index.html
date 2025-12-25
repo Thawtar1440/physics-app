@@ -1,133 +1,166 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Physics Calculator</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #fff;
-      padding: 20px;
-    }
-    h1 { text-align: center; }
-    .card {
-      background: #1e293b;
-      padding: 15px;
-      margin-bottom: 15px;
-      border-radius: 10px;
-    }
-    input {
-      width: 100%;
-      padding: 8px;
-      margin: 5px 0;
-      border-radius: 5px;
-      border: none;
-    }
-    button {
-      width: 100%;
-      padding: 10px;
-      background: #38bdf8;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      font-weight: bold;
-    }
-    .result {
-      margin-top: 8px;
-      font-size: 18px;
-      color: #22c55e;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Physics Calculator App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 20px;
+}
+h1, h2 {
+  text-align: center;
+}
+.card {
+  background: #1e293b;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 10px;
+}
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 6px;
+  border: none;
+}
+button {
+  background: #38bdf8;
+  font-size: 16px;
+  font-weight: bold;
+}
+.result {
+  margin-top: 8px;
+  font-size: 18px;
+  color: #22c55e;
+}
+</style>
 </head>
 
 <body>
+
 <h1>⚛️ Physics Formula App</h1>
 
+<!-- Formula Calculator -->
 <div class="card">
-  <h3>Force (F = m × a)</h3>
-  <input id="m" placeholder="Mass (kg)">
-  <input id="a" placeholder="Acceleration (m/s²)">
-  <button onclick="force()">Calculate</button>
-  <div class="result" id="force"></div>
+<h2>Formula Calculator</h2>
+
+<select id="formula" onchange="showFormula()">
+  <option value="">-- Select Formula --</option>
+  <option value="speed">Speed (v = d / t)</option>
+  <option value="force">Force (F = m × a)</option>
+  <option value="ohm">Ohm's Law (V = I × R)</option>
+  <option value="ke">Kinetic Energy (½mv²)</option>
+</select>
+
+<div id="formulaBox"></div>
 </div>
 
+<!-- Unit Converter -->
 <div class="card">
-  <h3>Velocity (v = s / t)</h3>
-  <input id="s" placeholder="Distance (m)">
-  <input id="t" placeholder="Time (s)">
-  <button onclick="velocity()">Calculate</button>
-  <div class="result" id="velocity"></div>
-</div>
+<h2>Unit Converter</h2>
 
-<div class="card">
-  <h3>Kinetic Energy (½ m v²)</h3>
-  <input id="km" placeholder="Mass (kg)">
-  <input id="kv" placeholder="Velocity (m/s)">
-  <button onclick="ke()">Calculate</button>
-  <div class="result" id="ke"></div>
-</div>
+<select id="unit">
+  <option value="cm">cm → m</option>
+  <option value="km">km → m</option>
+  <option value="g">g → kg</option>
+</select>
 
-<div class="card">
-  <h3>Potential Energy (m g h)</h3>
-  <input id="pm" placeholder="Mass (kg)">
-  <input id="h" placeholder="Height (m)">
-  <button onclick="pe()">Calculate</button>
-  <div class="result" id="pe"></div>
-</div>
-
-<div class="card">
-  <h3>Ohm's Law (V = I × R)</h3>
-  <input id="i" placeholder="Current (A)">
-  <input id="r" placeholder="Resistance (Ω)">
-  <button onclick="ohm()">Calculate</button>
-  <div class="result" id="ohm"></div>
-</div>
-
-<div class="card">
-  <h3>Einstein (E = m c²)</h3>
-  <input id="em" placeholder="Mass (kg)">
-  <button onclick="einstein()">Calculate</button>
-  <div class="result" id="einstein"></div>
+<input id="uval" placeholder="Enter value">
+<button onclick="convert()">Convert</button>
+<div class="result" id="uout"></div>
 </div>
 
 <script>
-function force(){
-  let m = +document.getElementById("m").value;
-  let a = +document.getElementById("a").value;
-  document.getElementById("force").innerText = "F = " + (m*a) + " N";
+function showFormula(){
+  let f = document.getElementById("formula").value;
+  let box = document.getElementById("formulaBox");
+
+  if(f === "speed"){
+    box.innerHTML = `
+      <p>v = d / t</p>
+      Distance (m): <input id="d">
+      Time (s): <input id="t">
+      <button onclick="calcSpeed()">Calculate</button>
+      <div class="result" id="out"></div>
+    `;
+  }
+
+  if(f === "force"){
+    box.innerHTML = `
+      <p>F = m × a</p>
+      Mass (kg): <input id="m">
+      Acceleration (m/s²): <input id="a">
+      <button onclick="calcForce()">Calculate</button>
+      <div class="result" id="out"></div>
+    `;
+  }
+
+  if(f === "ohm"){
+    box.innerHTML = `
+      <p>V = I × R</p>
+      Current (A): <input id="i">
+      Resistance (Ω): <input id="r">
+      <button onclick="calcVolt()">Calculate</button>
+      <div class="result" id="out"></div>
+    `;
+  }
+
+  if(f === "ke"){
+    box.innerHTML = `
+      <p>KE = ½ m v²</p>
+      Mass (kg): <input id="km">
+      Velocity (m/s): <input id="kv">
+      <button onclick="calcKE()">Calculate</button>
+      <div class="result" id="out"></div>
+    `;
+  }
 }
 
-function velocity(){
-  let s = +document.getElementById("s").value;
-  let t = +document.getElementById("t").value;
-  document.getElementById("velocity").innerText = "v = " + (s/t) + " m/s";
+function calcSpeed(){
+  let d = parseFloat(document.getElementById("d").value);
+  let t = parseFloat(document.getElementById("t").value);
+  document.getElementById("out").innerText =
+    "Speed = " + (d/t).toFixed(2) + " m/s";
 }
 
-function ke(){
-  let m = +document.getElementById("km").value;
-  let v = +document.getElementById("kv").value;
-  document.getElementById("ke").innerText = "KE = " + (0.5*m*v*v) + " J";
+function calcForce(){
+  let m = parseFloat(document.getElementById("m").value);
+  let a = parseFloat(document.getElementById("a").value);
+  document.getElementById("out").innerText =
+    "Force = " + (m*a).toFixed(2) + " N";
 }
 
-function pe(){
-  let m = +document.getElementById("pm").value;
-  let h = +document.getElementById("h").value;
-  document.getElementById("pe").innerText = "PE = " + (m*9.8*h) + " J";
+function calcVolt(){
+  let i = parseFloat(document.getElementById("i").value);
+  let r = parseFloat(document.getElementById("r").value);
+  document.getElementById("out").innerText =
+    "Voltage = " + (i*r).toFixed(2) + " V";
 }
 
-function ohm(){
-  let i = +document.getElementById("i").value;
-  let r = +document.getElementById("r").value;
-  document.getElementById("ohm").innerText = "V = " + (i*r) + " V";
+function calcKE(){
+  let m = parseFloat(document.getElementById("km").value);
+  let v = parseFloat(document.getElementById("kv").value);
+  document.getElementById("out").innerText =
+    "Energy = " + (0.5*m*v*v).toFixed(2) + " J";
 }
 
-function einstein(){
-  let m = +document.getElementById("em").value;
-  const c = 300000000;
-  document.getElementById("einstein").innerText = "E = " + (m*c*c) + " J";
+function convert(){
+  let v = parseFloat(document.getElementById("uval").value);
+  let u = document.getElementById("unit").value;
+  let r = "";
+
+  if(u === "cm") r = v/100 + " m";
+  if(u === "km") r = v*1000 + " m";
+  if(u === "g")  r = v/1000 + " kg";
+
+  document.getElementById("uout").innerText = "Result = " + r;
 }
 </script>
+
 </body>
 </html>
