@@ -1,164 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>Physics Calculator App</title>
+<title>Physics All Scenes + Animation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <style>
-body {
-  font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: #ffffff;
-  padding: 20px;
-}
-h1, h2 {
-  text-align: center;
-}
-.card {
-  background: #1e293b;
-  padding: 15px;
-  margin: 15px 0;
-  border-radius: 10px;
-}
-input, select, button {
-  width: 100%;
-  padding: 10px;
-  margin: 6px 0;
-  border-radius: 6px;
-  border: none;
-}
-button {
-  background: #38bdf8;
-  font-size: 16px;
-  font-weight: bold;
-}
-.result {
-  margin-top: 8px;
-  font-size: 18px;
-  color: #22c55e;
-}
+body{background:#020617;color:#fff;font-family:Arial;padding:15px}
+h1,h2{text-align:center}
+.card{background:#0f172a;padding:15px;margin:15px 0;border-radius:12px}
+select,input,button{width:100%;padding:10px;margin:6px 0;border-radius:6px;border:none}
+button{background:#38bdf8;font-weight:bold}
+.result{color:#22c55e;font-size:18px;margin-top:8px}
+canvas{background:#020617;width:100%;border-radius:10px}
 </style>
 </head>
 
 <body>
+<h1>⚛️ Physics – All Scenes + Animation</h1>
 
-<h1>⚛️ Physics Formula App</h1>
-
-<!-- Formula Calculator -->
+<!-- ================= FORMULA ================= -->
 <div class="card">
-<h2>Formula Calculator</h2>
+<h2>Physics Formula Calculator</h2>
 
-<select id="formula" onchange="showFormula()">
-  <option value="">-- Select Formula --</option>
-  <option value="speed">Speed (v = d / t)</option>
-  <option value="force">Force (F = m × a)</option>
-  <option value="ohm">Ohm's Law (V = I × R)</option>
-  <option value="ke">Kinetic Energy (½mv²)</option>
+<select id="scene" onchange="loadScene()">
+<option value="">-- Select Physics Scene --</option>
+
+<optgroup label="Mechanics">
+<option value="speed">Speed</option>
+<option value="force">Force</option>
+<option value="ke">Kinetic Energy</option>
+</optgroup>
+
+<optgroup label="Electricity">
+<option value="ohm">Ohm’s Law</option>
+</optgroup>
+
+<optgroup label="Modern Physics">
+<option value="einstein">E = mc²</option>
+</optgroup>
 </select>
 
-<div id="formulaBox"></div>
+<div id="box"></div>
 </div>
 
-<!-- Unit Converter -->
+<!-- ================= ANIMATION ================= -->
 <div class="card">
-<h2>Unit Converter</h2>
+<h2>Physics Animation</h2>
 
-<select id="unit">
-  <option value="cm">cm → m</option>
-  <option value="km">km → m</option>
-  <option value="g">g → kg</option>
+<select id="anim" onchange="startAnim()">
+<option value="">-- Select Animation --</option>
+<option value="motion">Uniform Motion</option>
+<option value="wave">Wave Motion</option>
 </select>
 
-<input id="uval" placeholder="Enter value">
-<button onclick="convert()">Convert</button>
-<div class="result" id="uout"></div>
+<canvas id="canvas" width="350" height="200"></canvas>
 </div>
 
 <script>
-function showFormula(){
-  let f = document.getElementById("formula").value;
-  let box = document.getElementById("formulaBox");
+/* ================= FORMULA LOGIC ================= */
+function loadScene(){
+let s=scene.value,b=box;
 
-  if(f === "speed"){
-    box.innerHTML = `
-      <p>v = d / t</p>
-      Distance (m): <input id="d">
-      Time (s): <input id="t">
-      <button onclick="calcSpeed()">Calculate</button>
-      <div class="result" id="out"></div>
-    `;
-  }
+if(s=="speed") b.innerHTML=`
+v = d / t
+<input id=d placeholder="Distance (m)">
+<input id=t placeholder="Time (s)">
+<button onclick="res('Speed = '+(d.value/t.value)+' m/s')">Calculate</button>
+<div class=result id=r></div>`;
 
-  if(f === "force"){
-    box.innerHTML = `
-      <p>F = m × a</p>
-      Mass (kg): <input id="m">
-      Acceleration (m/s²): <input id="a">
-      <button onclick="calcForce()">Calculate</button>
-      <div class="result" id="out"></div>
-    `;
-  }
+if(s=="force") b.innerHTML=`
+F = m × a
+<input id=m placeholder="Mass (kg)">
+<input id=a placeholder="Acceleration">
+<button onclick="res('Force = '+(m.value*a.value)+' N')">Calculate</button>
+<div class=result id=r></div>`;
 
-  if(f === "ohm"){
-    box.innerHTML = `
-      <p>V = I × R</p>
-      Current (A): <input id="i">
-      Resistance (Ω): <input id="r">
-      <button onclick="calcVolt()">Calculate</button>
-      <div class="result" id="out"></div>
-    `;
-  }
+if(s=="ke") b.innerHTML=`
+KE = ½mv²
+<input id=m placeholder="Mass (kg)">
+<input id=v placeholder="Velocity">
+<button onclick="res('KE = '+(0.5*m.value*v.value*v.value)+' J')">Calculate</button>
+<div class=result id=r></div>`;
 
-  if(f === "ke"){
-    box.innerHTML = `
-      <p>KE = ½ m v²</p>
-      Mass (kg): <input id="km">
-      Velocity (m/s): <input id="kv">
-      <button onclick="calcKE()">Calculate</button>
-      <div class="result" id="out"></div>
-    `;
-  }
+if(s=="ohm") b.innerHTML=`
+V = I × R
+<input id=i placeholder="Current (A)">
+<input id=r1 placeholder="Resistance (Ω)">
+<button onclick="res('Voltage = '+(i.value*r1.value)+' V')">Calculate</button>
+<div class=result id=r></div>`;
+
+if(s=="einstein") b.innerHTML=`
+E = mc²
+<input id=m placeholder="Mass (kg)">
+<button onclick="res('Energy = '+(m.value*9e16)+' J')">Calculate</button>
+<div class=result id=r></div>`;
+}
+function res(t){ r.innerText=t }
+
+/* ================= ANIMATION ================= */
+const c = canvas.getContext("2d");
+let x=20, waveX=0, animId;
+
+function startAnim(){
+cancelAnimationFrame(animId);
+c.clearRect(0,0,canvas.width,canvas.height);
+x=20; waveX=0;
+
+if(anim.value=="motion") motion();
+if(anim.value=="wave") wave();
 }
 
-function calcSpeed(){
-  let d = parseFloat(document.getElementById("d").value);
-  let t = parseFloat(document.getElementById("t").value);
-  document.getElementById("out").innerText =
-    "Speed = " + (d/t).toFixed(2) + " m/s";
+function motion(){
+c.clearRect(0,0,canvas.width,canvas.height);
+c.fillStyle="#38bdf8";
+c.beginPath();
+c.arc(x,100,12,0,Math.PI*2);
+c.fill();
+x+=2;
+if(x>canvas.width) x=0;
+animId=requestAnimationFrame(motion);
 }
 
-function calcForce(){
-  let m = parseFloat(document.getElementById("m").value);
-  let a = parseFloat(document.getElementById("a").value);
-  document.getElementById("out").innerText =
-    "Force = " + (m*a).toFixed(2) + " N";
+function wave(){
+c.clearRect(0,0,canvas.width,canvas.height);
+c.strokeStyle="#22c55e";
+c.beginPath();
+for(let i=0;i<canvas.width;i++){
+let y=100+30*Math.sin((i+waveX)*0.05);
+if(i==0) c.moveTo(i,y); else c.lineTo(i,y);
 }
-
-function calcVolt(){
-  let i = parseFloat(document.getElementById("i").value);
-  let r = parseFloat(document.getElementById("r").value);
-  document.getElementById("out").innerText =
-    "Voltage = " + (i*r).toFixed(2) + " V";
-}
-
-function calcKE(){
-  let m = parseFloat(document.getElementById("km").value);
-  let v = parseFloat(document.getElementById("kv").value);
-  document.getElementById("out").innerText =
-    "Energy = " + (0.5*m*v*v).toFixed(2) + " J";
-}
-
-function convert(){
-  let v = parseFloat(document.getElementById("uval").value);
-  let u = document.getElementById("unit").value;
-  let r = "";
-
-  if(u === "cm") r = v/100 + " m";
-  if(u === "km") r = v*1000 + " m";
-  if(u === "g")  r = v/1000 + " kg";
-
-  document.getElementById("uout").innerText = "Result = " + r;
+c.stroke();
+waveX+=4;
+animId=requestAnimationFrame(wave);
 }
 </script>
 
