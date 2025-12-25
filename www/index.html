@@ -2,138 +2,300 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Physics All Scenes + Animation</title>
+<title>Physics Full Detailed App</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body{background:#020617;color:#fff;font-family:Arial;padding:15px}
-h1,h2{text-align:center}
-.card{background:#0f172a;padding:15px;margin:15px 0;border-radius:12px}
-select,input,button{width:100%;padding:10px;margin:6px 0;border-radius:6px;border:none}
-button{background:#38bdf8;font-weight:bold}
-.result{color:#22c55e;font-size:18px;margin-top:8px}
-canvas{background:#020617;width:100%;border-radius:10px}
+body{margin:0;font-family:Arial;background:#020617;color:#e5e7eb}
+header{padding:16px;text-align:center;font-size:22px;color:#38bdf8}
+section{padding:12px}
+details{background:#020617;border-radius:12px;margin-bottom:16px;padding:12px}
+summary{font-size:18px;color:#38bdf8;font-weight:bold;cursor:pointer}
+h4{margin:10px 0;color:#7dd3fc}
+.formula{border-left:4px solid #38bdf8;padding:6px;margin:6px 0}
+.unit{color:#a5f3fc;font-size:13px}
+.example{background:#020617;border:1px solid #1e293b;padding:8px;border-radius:6px}
+input,button{width:100%;padding:8px;margin:4px 0;border-radius:6px;border:none}
+button{background:#38bdf8;color:black;font-weight:bold}
+.result{color:#22d3ee;margin-top:5px}
+p{font-size:14px;line-height:1.7}
 </style>
 </head>
 
 <body>
-<h1>⚛️ Physics – All Scenes + Animation</h1>
+<header>📘 PHYSICS – COMPLETE DETAILED THEORY + FORMULA + CALCULATION</header>
+<section>
 
-<!-- ================= FORMULA ================= -->
-<div class="card">
-<h2>Physics Formula Calculator</h2>
+<!-- ================= CHAPTER 1 ================= -->
+<details open>
+<summary>Chapter 1 – Motion</summary>
 
-<select id="scene" onchange="loadScene()">
-<option value="">-- Select Physics Scene --</option>
+<h4>1. Definition</h4>
+<p>
+Motion ဆိုသည်မှာ အရာဝတ္ထုတစ်ခု၏ နေရာ (position) သည် အချိန်အလိုက် ပြောင်းလဲခြင်းဖြစ်သည်။
+Observer တစ်ယောက်အပေါ်မူတည်ပြီး motion သို့မဟုတ် rest ဖြစ်နိုင်သည်။
+</p>
 
-<optgroup label="Mechanics">
-<option value="speed">Speed</option>
-<option value="force">Force</option>
-<option value="ke">Kinetic Energy</option>
-</optgroup>
+<h4>2. Types of Motion</h4>
+<p>
+(1) Translational Motion – တစ်နေရာမှ တစ်နေရာသို့ ရွေ့လျားခြင်း<br>
+(2) Rotational Motion – Axis တစ်ခုအပေါ် လှည့်လည်ခြင်း<br>
+(3) Oscillatory Motion – အပြန်အလှန် လှုပ်ရှားခြင်း
+</p>
 
-<optgroup label="Electricity">
-<option value="ohm">Ohm’s Law</option>
-</optgroup>
+<h4>3. Speed & Velocity</h4>
+<p>
+Speed သည် scalar quantity ဖြစ်ပြီး direction မပါဝင်ပါ။
+Velocity သည် vector quantity ဖြစ်ပြီး magnitude နှင့် direction နှစ်ခုလုံး ပါဝင်သည်။
+</p>
 
-<optgroup label="Modern Physics">
-<option value="einstein">E = mc²</option>
-</optgroup>
-</select>
+<h4>4. Acceleration</h4>
+<p>
+Velocity ပြောင်းလဲမှု၏ အမြန်နှုန်းကို acceleration ဟုခေါ်သည်။
+Uniform acceleration နှင့် non-uniform acceleration ရှိသည်။
+</p>
 
-<div id="box"></div>
+<h4>5. Equations of Motion</h4>
+<div class="formula">v = u + at</div>
+<div class="formula">s = ut + ½at²</div>
+<div class="formula">v² = u² + 2as</div>
+
+<h4>Units</h4>
+<p class="unit">Distance (m), Time (s), Velocity (m/s), Acceleration (m/s²)</p>
+
+<h4>Example Calculation</h4>
+<div class="example">
+<input id="d1" placeholder="Distance (m)">
+<input id="t1" placeholder="Time (s)">
+<button onclick="r1.innerText='Speed = '+(d1.value/t1.value)+' m/s'">Calculate Speed</button>
+<div id="r1" class="result"></div>
 </div>
+</details>
 
-<!-- ================= ANIMATION ================= -->
-<div class="card">
-<h2>Physics Animation</h2>
+<!-- ================= CHAPTER 2 ================= -->
+<details>
+<summary>Chapter 2 – Laws of Motion</summary>
 
-<select id="anim" onchange="startAnim()">
-<option value="">-- Select Animation --</option>
-<option value="motion">Uniform Motion</option>
-<option value="wave">Wave Motion</option>
-</select>
+<h4>1. Newton’s First Law</h4>
+<p>
+Object တစ်ခုသည် force မသက်ရောက်လျှင် rest သို့မဟုတ် uniform velocity ဖြင့် ဆက်လက်ရွေ့လျားနေမည်ဖြစ်သည်။
+ဒီ law ကို law of inertia ဟုလည်း ခေါ်သည်။
+</p>
 
-<canvas id="canvas" width="350" height="200"></canvas>
+<h4>2. Newton’s Second Law</h4>
+<p>
+Force သည် momentum ပြောင်းလဲမှု၏ အမြန်နှုန်းနှင့် တိုက်ရိုက်အချိုးကျသည်။
+</p>
+
+<div class="formula">F = ma</div>
+
+<h4>3. Newton’s Third Law</h4>
+<p>
+Action တစ်ခုတိုင်းအတွက် equal and opposite reaction တစ်ခုရှိသည်။
+</p>
+
+<h4>Momentum & Impulse</h4>
+<div class="formula">Momentum p = mv</div>
+<div class="formula">Impulse = Ft = Δp</div>
+
+<h4>Units</h4>
+<p class="unit">Force (N), Momentum (kg·m/s)</p>
+
+<h4>Calculation</h4>
+<div class="example">
+<input id="m2" placeholder="Mass (kg)">
+<input id="a2" placeholder="Acceleration (m/s²)">
+<button onclick="r2.innerText='Force = '+(m2.value*a2.value)+' N'">Calculate Force</button>
+<div id="r2" class="result"></div>
 </div>
+</details>
 
-<script>
-/* ================= FORMULA LOGIC ================= */
-function loadScene(){
-let s=scene.value,b=box;
+<!-- ================= CHAPTER 3 ================= -->
+<details>
+<summary>Chapter 3 – Work, Energy & Power</summary>
 
-if(s=="speed") b.innerHTML=`
-v = d / t
-<input id=d placeholder="Distance (m)">
-<input id=t placeholder="Time (s)">
-<button onclick="res('Speed = '+(d.value/t.value)+' m/s')">Calculate</button>
-<div class=result id=r></div>`;
+<h4>Work</h4>
+<p>
+Force တစ်ခုကြောင့် displacement ဖြစ်လာလျှင် work လုပ်သည်ဟု ဆိုသည်။
+Displacement မရှိရင် work မလုပ်ပါ။
+</p>
 
-if(s=="force") b.innerHTML=`
-F = m × a
-<input id=m placeholder="Mass (kg)">
-<input id=a placeholder="Acceleration">
-<button onclick="res('Force = '+(m.value*a.value)+' N')">Calculate</button>
-<div class=result id=r></div>`;
+<div class="formula">Work = Force × Displacement</div>
 
-if(s=="ke") b.innerHTML=`
-KE = ½mv²
-<input id=m placeholder="Mass (kg)">
-<input id=v placeholder="Velocity">
-<button onclick="res('KE = '+(0.5*m.value*v.value*v.value)+' J')">Calculate</button>
-<div class=result id=r></div>`;
+<h4>Energy</h4>
+<p>
+Energy ဆိုတာ work လုပ်နိုင်စွမ်းဖြစ်ပြီး
+Kinetic Energy နှင့် Potential Energy ဟူ၍ ခွဲနိုင်သည်။
+</p>
 
-if(s=="ohm") b.innerHTML=`
-V = I × R
-<input id=i placeholder="Current (A)">
-<input id=r1 placeholder="Resistance (Ω)">
-<button onclick="res('Voltage = '+(i.value*r1.value)+' V')">Calculate</button>
-<div class=result id=r></div>`;
+<div class="formula">KE = ½mv²</div>
+<div class="formula">PE = mgh</div>
 
-if(s=="einstein") b.innerHTML=`
-E = mc²
-<input id=m placeholder="Mass (kg)">
-<button onclick="res('Energy = '+(m.value*9e16)+' J')">Calculate</button>
-<div class=result id=r></div>`;
-}
-function res(t){ r.innerText=t }
+<h4>Power</h4>
+<div class="formula">Power = Work / Time</div>
 
-/* ================= ANIMATION ================= */
-const c = canvas.getContext("2d");
-let x=20, waveX=0, animId;
+<h4>Law of Conservation of Energy</h4>
+<p>
+Energy ကို ဖန်တီးလို့မရ၊ ဖျက်ဆီးလို့မရဘဲ
+တစ်ပုံစံမှ တစ်ပုံစံသို့ ပြောင်းလဲသာနိုင်သည်။
+</p>
 
-function startAnim(){
-cancelAnimationFrame(animId);
-c.clearRect(0,0,canvas.width,canvas.height);
-x=20; waveX=0;
+<h4>Calculation</h4>
+<div class="example">
+<input id="m3" placeholder="Mass (kg)">
+<input id="v3" placeholder="Velocity (m/s)">
+<button onclick="r3.innerText='KE = '+(0.5*m3.value*v3.value*v3.value)+' J'">Calculate KE</button>
+<div id="r3" class="result"></div>
+</div>
+</details>
 
-if(anim.value=="motion") motion();
-if(anim.value=="wave") wave();
-}
+<!-- ================= CHAPTER 4 ================= -->
+<details>
+<summary>Chapter 4 – Rotational Motion</summary>
 
-function motion(){
-c.clearRect(0,0,canvas.width,canvas.height);
-c.fillStyle="#38bdf8";
-c.beginPath();
-c.arc(x,100,12,0,Math.PI*2);
-c.fill();
-x+=2;
-if(x>canvas.width) x=0;
-animId=requestAnimationFrame(motion);
-}
+<h4>Concept</h4>
+<p>
+Object တစ်ခုသည် axis တစ်ခုအပေါ် လှည့်လည်နေပါက rotational motion ဖြစ်သည်။
+Linear quantity များကို angular quantity များနှင့် ဆက်စပ်နိုင်သည်။
+</p>
 
-function wave(){
-c.clearRect(0,0,canvas.width,canvas.height);
-c.strokeStyle="#22c55e";
-c.beginPath();
-for(let i=0;i<canvas.width;i++){
-let y=100+30*Math.sin((i+waveX)*0.05);
-if(i==0) c.moveTo(i,y); else c.lineTo(i,y);
-}
-c.stroke();
-waveX+=4;
-animId=requestAnimationFrame(wave);
-}
-</script>
+<div class="formula">Angular velocity ω = θ / t</div>
+<div class="formula">Linear velocity v = rω</div>
+<div class="formula">Torque τ = Iα</div>
 
+<h4>Units</h4>
+<p class="unit">ω (rad/s), Torque (N·m)</p>
+
+<h4>Calculation</h4>
+<div class="example">
+<input id="th4" placeholder="Angle (rad)">
+<input id="t4" placeholder="Time (s)">
+<button onclick="r4.innerText='ω = '+(th4.value/t4.value)+' rad/s'">Calculate</button>
+<div id="r4" class="result"></div>
+</div>
+</details>
+
+<!-- ================= CHAPTER 5 ================= -->
+<details>
+<summary>Chapter 5 – Fluid Mechanics</summary>
+
+<h4>Basic Idea</h4>
+<p>
+Fluid ဆိုသည်မှာ liquid နှင့် gas များဖြစ်ပြီး flow ဖြစ်နိုင်သည်။
+</p>
+
+<div class="formula">Density ρ = m / V</div>
+<div class="formula">Continuity: A₁v₁ = A₂v₂</div>
+<div class="formula">Bernoulli: P + ½ρv² + ρgh = constant</div>
+
+<h4>Calculation</h4>
+<div class="example">
+<input id="m5" placeholder="Mass (kg)">
+<input id="v5" placeholder="Volume (m³)">
+<button onclick="r5.innerText='Density = '+(m5.value/v5.value)+' kg/m³'">Calculate</button>
+<div id="r5" class="result"></div>
+</div>
+</details>
+
+<!-- ================= CHAPTER 6 ================= -->
+<details>
+<summary>Chapter 6 – Thermal Physics</summary>
+
+<h4>Heat & Temperature</h4>
+<p>
+Heat သည် energy transfer ဖြစ်ပြီး
+Temperature သည် particle များ၏ average kinetic energy ကို ဖော်ပြသည်။
+</p>
+
+<div class="formula">Q = mcΔT</div>
+<div class="formula">ΔU = Q − W</div>
+
+<h4>Calculation</h4>
+<div class="example">
+<input id="m6" placeholder="Mass">
+<input id="c6" placeholder="Specific Heat">
+<input id="t6" placeholder="ΔT">
+<button onclick="r6.innerText='Heat = '+(m6.value*c6.value*t6.value)+' J'">Calculate</button>
+<div id="r6" class="result"></div>
+</div>
+</details>
+
+<!-- ================= CHAPTER 7 ================= -->
+<details>
+<summary>Chapter 7 – Waves & Sound</summary>
+
+<h4>Concept</h4>
+<p>
+Wave သည် matter မသယ်ဘဲ energy ကို သယ်ဆောင်သည်။
+Sound wave သည် longitudinal wave ဖြစ်သည်။
+</p>
+
+<div class="formula">v = fλ</div>
+
+<h4>Calculation</h4>
+<div class="example">
+<input id="f7" placeholder="Frequency (Hz)">
+<input id="l7" placeholder="Wavelength (m)">
+<button onclick="r7.innerText='Speed = '+(f7.value*l7.value)+' m/s'">Calculate</button>
+<div id="r7" class="result"></div>
+</div>
+</details>
+
+<!-- ================= CHAPTER 8 ================= -->
+<details>
+<summary>Chapter 8 – Optics</summary>
+
+<h4>Reflection & Refraction</h4>
+<p>
+Reflection သည် surface ပေါ်မှ ပြန်လှန်ခြင်းဖြစ်ပြီး
+Refraction သည် medium ပြောင်းလဲရာမှ direction ပြောင်းလဲခြင်းဖြစ်သည်။
+</p>
+
+<div class="formula">1/f = 1/u + 1/v</div>
+<div class="formula">n = sin i / sin r</div>
+</details>
+
+<!-- ================= CHAPTER 9 ================= -->
+<details>
+<summary>Chapter 9 – Electricity</summary>
+
+<h4>Electric Current</h4>
+<p>
+Electric current သည် charge များ၏ flow ဖြစ်ပြီး
+Ohm’s law က circuit behavior ကို ရှင်းပြသည်။
+</p>
+
+<div class="formula">V = IR</div>
+<div class="formula">P = VI</div>
+
+<h4>Calculation</h4>
+<div class="example">
+<input id="i9" placeholder="Current (A)">
+<input id="r9" placeholder="Resistance (Ω)">
+<button onclick="r9o.innerText='Voltage = '+(i9.value*r9.value)+' V'">Calculate</button>
+<div id="r9o" class="result"></div>
+</div>
+</details>
+
+<!-- ================= CHAPTER 10 ================= -->
+<details>
+<summary>Chapter 10 – Magnetism & Modern Physics</summary>
+
+<h4>Magnetism</h4>
+<p>
+Moving charge များကြောင့် magnetic field ဖြစ်ပေါ်သည်။
+</p>
+
+<div class="formula">F = BIL</div>
+
+<h4>Modern Physics</h4>
+<p>
+Modern physics သည် atom, nucleus နှင့် quantum theory ကို လေ့လာသည်။
+</p>
+
+<div class="formula">E = mc²</div>
+<div class="formula">E = hf</div>
+</details>
+
+</section>
 </body>
 </html>
